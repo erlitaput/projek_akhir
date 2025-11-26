@@ -629,20 +629,6 @@ def history_penyewaan() :
     print("*        HISTORY PENYEWAAN         *")
     print("************************************") 
     riwayat = pd.read_csv('riwayat.csv', sep=',')
-    
-    def mengurutkan(tanggal_str):
-        try:
-            parts = tanggal_str.split('/')
-            day = int(parts[0])
-            month_name = parts[1].strip().lower()
-            year = int(parts[2].strip())
-            month_index = next((i+1 for i, m in enumerate(MONTHS_ID) if m.lower() == month_name), 1)
-            return date(year, month_index, day)
-        except:
-            return date.today()
-    riwayat['tanggal_sort'] = riwayat['tanggal sewa'].apply(mengurutkan)
-    riwayat = riwayat.sort_values('tanggal_sort', ascending=True).drop('tanggal_sort', axis=1)
-    
     print(tabulate(riwayat, headers='keys', tablefmt='fancy_grid', showindex=False))
     input("Tekan enter untuk kembali ke menu")
 
