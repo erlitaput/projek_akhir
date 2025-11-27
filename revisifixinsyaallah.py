@@ -157,7 +157,7 @@ def tampilan_user():
     while True :
         os.system('cls')
         print("************************************")
-        print("*          TAMPILAN USER           *")
+        print("*       MENU USER AGRORENT         *")
         print("************************************")
         print("silahkan pilih menu dibawah ini :")
         print("1. sewa alat")
